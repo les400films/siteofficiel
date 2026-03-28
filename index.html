@@ -10,64 +10,95 @@
         scroll-behavior: smooth; /* C'est ICI qu'il faut le mettre */
     }
 
-        /* --- ADAPTATION MOBILE --- */
+        /* --- ADAPTATION MOBILE AFFINÉE --- */
 @media (max-width: 768px) {
-    /* 1. Le titre s'adapte pour ne pas déborder */
-    .hero h1 {
-        font-size: 3rem;
+    
+    /* 1. BARRE DE MENU (NAVBAR) */
+    .navbar {
+        gap: 2px; /* Espacement minimum */
+        padding: 5px 0;
+    }
+    .navbar a {
+        font-size: 0.65rem; /* Texte plus petit pour tout faire tenir */
+        padding: 6px 4px;
+        letter-spacing: 0;
     }
 
-    /* 2. La présentation : les polaroïds et le texte s'empilent */
+    /* 2. TITRE JAUNE ET HERO */
+    .hero {
+        height: 40vh; /* Moins haut sur mobile */
+    }
+    .hero h1 {
+        font-size: 2.2rem !important; /* Taille réduite pour ne pas couper */
+        width: 90%;
+        margin: 0 auto;
+    }
+    .hero-hover-container {
+        height: 70% !important; /* Image un peu plus petite */
+    }
+
+    /* 3. LOGO ET TITRE PRÉSENTATION */
+    .logo-title {
+        height: 80px !important; /* Logo beaucoup moins gros */
+        width: auto;
+    }
+    .presentation h2 {
+        font-size: 1.8rem !important; /* Titre "Qu'est-ce ?" réduit */
+    }
+    .title-container {
+        flex-direction: column; /* Logo au dessus du titre */
+        gap: 5px;
+    }
+
+    /* 4. POLAROÏDS */
     .presentation-container {
         flex-direction: column;
-        gap: 20px;
+        align-items: center;
     }
-    
     .polaroid-flip {
-        width: 150px; /* Un peu plus petit sur mobile */
-        height: 190px;
+        width: 140px !important; 
+        height: 180px !important;
+        margin-bottom: 20px;
+    }
+    .left-pola, .right-pola {
+        transform: rotate(0deg); /* On les remet droit pour gagner de la place */
     }
 
-    /* 3. Les Pôles : ils passent l'un sous l'autre au lieu d'être alignés */
+    /* 5. TITRES DES ONGLETS ET PÔLES */
+    .tab-btn {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+    .tab-content h3 {
+        font-size: 1.4rem;
+    }
+    
+    /* On empile les pôles */
     .poles-container {
         flex-direction: column;
-        height: auto; /* La hauteur s'adapte au contenu */
+        height: auto;
     }
-
     .pole-card {
         width: 100%;
-        height: 200px; /* Hauteur fixe pour les cartes fermées */
+        height: 150px;
         flex: none;
     }
-
     .pole-card.active {
-        height: 400px; /* Elle s'agrandit vers le bas */
+        height: 350px;
         flex: none;
     }
 
-    /* 4. La Direction Pano : on enlève le trait vertical qui gêne sur petit écran */
-    .pano-boss-grid {
-        flex-direction: column;
+    /* 6. DIRECTION PANORAMIQUE */
+    .direction-pano-card.active {
+        height: 300px;
     }
-    
-    .pano-boss-grid::after {
-        display: none; /* On cache le trait de séparation */
-    }
-
-    /* 5. La barre de navigation : on réduit un peu la taille du texte */
-    .navbar {
-        gap: 5px;
-        padding: 5px;
+    .boss-item h4 {
+        font-size: 1.2rem;
     }
 
-    .navbar a {
-        font-size: 0.7rem;
-        padding: 5px 8px;
-    }
-    
-    /* 6. On cache les images de déco qui prennent trop de place (Godard/Ethan) */
+    /* On cache les décos qui encombrent */
     .deco-gauche, .deco-droite-bas {
-        display: none;
+        display: none !important;
     }
 }
         
