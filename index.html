@@ -61,7 +61,7 @@
         .logo-title { height: 180px; width: auto; object-fit: contain; }
         .presentation h2 { font-family: 'Screwball', sans-serif !important; color: #6b0606 !important; margin: 0; font-size: 3rem; line-height: 1.1; }
 
-        /* POLAROÏDS */
+        /* POLAROÏDS PC */
         .polaroid-flip {
             width: 180px; height: 220px; cursor: pointer; position: relative;
             transform-style: preserve-3d; transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
@@ -125,20 +125,46 @@
         .social-links a:hover { background: rgb(241, 214, 154); color: #3e1414; transform: translateY(-5px); }
         .copyright { position: relative; z-index: 2; font-size: 0.8rem; margin-top: 30px; }
 
-        /* --- OPTIMISATION MOBILE --- */
+        /* --- OPTIMISATION MOBILE FINALE --- */
         @media (max-width: 768px) {
             .navbar a { font-size: 0.65rem; padding: 6px 4px; }
             .hero { height: 40vh; }
             .hero h1 { font-size: 2.1rem !important; }
-            .presentation-container { flex-direction: column; gap: 20px; }
             .logo-title { height: 100px !important; }
             .presentation h2 { font-size: 1.7rem !important; }
+
+            /* Polas côte à côte à la fin du texte sur mobile */
+            .presentation-container { flex-direction: column; gap: 20px; }
             .presentation-text { order: 1; }
-            .left-pola, .right-pola { 
-                order: 2; transform: rotate(0deg) !important; 
-                width: 160px !important; height: 200px !important; margin: 10px auto;
-                display: block; 
+            
+            /* Conteneur spécial mobile pour les polas côte à côte */
+            .pola-mobile-container {
+                order: 2;
+                display: flex !important;
+                justify-content: center;
+                gap: 10px; /* Espace réduit entre les deux */
+                width: 100%;
+                margin-top: 10px;
             }
+            
+            .left-pola, .right-pola { 
+                transform: rotate(0deg) !important; /* Pas penché sur tel */
+                /* Taille réduite pour tenir côte à côte */
+                width: calc(50% - 15px) !important; 
+                max-width: 140px !important; /* Limite la taille max */
+                height: auto !important;
+                aspect-ratio: 180 / 220; /* Maintient les proportions */
+                margin: 0 !important;
+            }
+            
+            /* S'assure que le front/back s'adaptent à la nouvelle taille */
+            .polaroid-front img, .polaroid-back {
+                border-width: 4px !important;
+                border-bottom-width: 15px !important;
+                font-size: 0.7rem !important;
+                padding: 5px !important;
+            }
+
             .left-pola.flipped, .right-pola.flipped { transform: rotateY(180deg) !important; }
             .poles-container { flex-direction: column; height: auto; }
             .pole-card { width: 100%; height: 150px; flex: none; }
@@ -168,11 +194,7 @@
 
 <section class="presentation">
     <div class="presentation-container">
-        <div class="polaroid-flip left-pola" onclick="this.classList.toggle('flipped')">
-            <div class="polaroid-front"><img src="polar1.jpg" alt="Photo 1"></div>
-            <div class="polaroid-back"><p>"EUh...Tous..."</p></div>
-        </div>
-
+        
         <div class="presentation-text">
             <div class="title-container">
                 <img src="logo.png" alt="Logo" class="logo-title">
@@ -185,10 +207,18 @@
             </p>
         </div>
 
-        <div class="polaroid-flip right-pola" onclick="this.classList.toggle('flipped')">
-            <div class="polaroid-front"><img src="polar2.jpg" alt="Photo 2"></div>
-            <div class="polaroid-back"><p>Tournage "Dans son livre d'histoire"</p></div>
+        <div class="pola-mobile-container">
+            <div class="polaroid-flip left-pola" onclick="this.classList.toggle('flipped')">
+                <div class="polaroid-front"><img src="polar1.jpg" alt="Photo 1"></div>
+                <div class="polaroid-back"><p>"EUh...Tous..."</p></div>
+            </div>
+
+            <div class="polaroid-flip right-pola" onclick="this.classList.toggle('flipped')">
+                <div class="polaroid-front"><img src="polar2.jpg" alt="Photo 2"></div>
+                <div class="polaroid-back"><p>Tournage "Dans son livre d'histoire"</p></div>
+            </div>
         </div>
+        
     </div>
 </section>
 
@@ -240,7 +270,7 @@
                 <h3>Comm'</h3>
                 <div class="members-list">
                     <p><strong>Président :</strong> ???</p>
-                    <p><strong>Membres :</strong> Chloé, Kohai Lana, Mayron, Shanel</p>
+                    <p><strong>Membres :</strong> Chloé, Kohai Lana, Mayron, Shannel</p>
                 </div>
             </div>
         </div>
@@ -249,7 +279,7 @@
             <div class="pole-info">
                 <h3>Orga</h3>
                 <div class="members-list">
-                    <p><strong>Président :</strong> Evan</p>
+                    <p><strong>Président :</strong> ???</p>
                     <p><strong>Membres :</strong> Loren, Jules, Arthur, Evan</p>
                 </div>
             </div>
@@ -259,7 +289,7 @@
             <div class="pole-info">
                 <h3>Event</h3>
                 <div class="members-list">
-                    <p><strong>Président :</strong> Thomas</p>
+                    <p><strong>Président :</strong> ???</p>
                     <p><strong>Membres :</strong> Léandry, Liam, Adrian, Thomas </p>
                 </div>
             </div>
