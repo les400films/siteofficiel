@@ -3,11 +3,74 @@
     
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Les 400 Films</title>
     <style>
         html {
         scroll-behavior: smooth; /* C'est ICI qu'il faut le mettre */
     }
+
+        /* --- ADAPTATION MOBILE --- */
+@media (max-width: 768px) {
+    /* 1. Le titre s'adapte pour ne pas déborder */
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    /* 2. La présentation : les polaroïds et le texte s'empilent */
+    .presentation-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .polaroid-flip {
+        width: 150px; /* Un peu plus petit sur mobile */
+        height: 190px;
+    }
+
+    /* 3. Les Pôles : ils passent l'un sous l'autre au lieu d'être alignés */
+    .poles-container {
+        flex-direction: column;
+        height: auto; /* La hauteur s'adapte au contenu */
+    }
+
+    .pole-card {
+        width: 100%;
+        height: 200px; /* Hauteur fixe pour les cartes fermées */
+        flex: none;
+    }
+
+    .pole-card.active {
+        height: 400px; /* Elle s'agrandit vers le bas */
+        flex: none;
+    }
+
+    /* 4. La Direction Pano : on enlève le trait vertical qui gêne sur petit écran */
+    .pano-boss-grid {
+        flex-direction: column;
+    }
+    
+    .pano-boss-grid::after {
+        display: none; /* On cache le trait de séparation */
+    }
+
+    /* 5. La barre de navigation : on réduit un peu la taille du texte */
+    .navbar {
+        gap: 5px;
+        padding: 5px;
+    }
+
+    .navbar a {
+        font-size: 0.7rem;
+        padding: 5px 8px;
+    }
+    
+    /* 6. On cache les images de déco qui prennent trop de place (Godard/Ethan) */
+    .deco-gauche, .deco-droite-bas {
+        display: none;
+    }
+}
+        
         /* 1. POLICE ET FOND */
         @font-face {
             font-family: 'Screwball'; 
