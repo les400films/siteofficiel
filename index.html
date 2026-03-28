@@ -4,12 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light only">
     <title>Les 400 Films</title>
     <style>
         html {
         scroll-behavior: smooth; /* C'est ICI qu'il faut le mettre */
     }
 
+        /* FORCE LE ROUGE ET LE JAUNE (Anti-Mode Sombre) */
+        h1, .hero h1 { 
+            color: rgb(241, 214, 154) !important; 
+        }
+
+        h2, h3, h4, .tab-btn.active-btn { 
+            color: #6b0606 !important; 
+        }
+
+        /* Force le fond blanc des sections */
+        section, .tab-content, .presentation {
+            background-color: #ffffff !important;
+        }
         /* --- ADAPTATION MOBILE AFFINÉE --- */
 @media (max-width: 768px) {
     
@@ -114,9 +128,9 @@
             margin: 0; 
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
             text-align: center; 
-            color: #333; 
+            color: #333333 !important; 
+            background-color: #ffffff !important;
             line-height: 1.6; 
-            background-color: #fff;
             overflow-x: hidden; 
         }
 
