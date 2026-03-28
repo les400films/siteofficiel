@@ -33,7 +33,7 @@
         }
         .navbar a:hover { background: rgb(241, 214, 154); color: #3e1414; border-radius: 5px; }
 
-        /* --- HERO SECTION (TEXTURE) --- */
+        /* --- HERO SECTION --- */
         .hero { 
             height: 50vh; background: linear-gradient(135deg, #680808 0%, #6b0606 100%); 
             position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden;
@@ -61,7 +61,7 @@
         .logo-title { height: 180px; width: auto; object-fit: contain; }
         .presentation h2 { font-family: 'Screwball', sans-serif !important; color: #6b0606 !important; margin: 0; font-size: 3rem; line-height: 1.1; }
 
-        /* POLAROÏDS PC */
+        /* POLAROÏDS */
         .polaroid-flip {
             width: 180px; height: 220px; cursor: pointer; position: relative;
             transform-style: preserve-3d; transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
@@ -70,7 +70,6 @@
         .left-pola { transform: rotate(-5deg); }
         .right-pola { transform: rotate(5deg); }
         .polaroid-flip.flipped { transform: rotateY(180deg); }
-        
         .polaroid-front, .polaroid-back {
             position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 5px; box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
         }
@@ -86,7 +85,6 @@
         .tabs-section { position: relative; background: #f9f9f9 !important; padding: 80px 0; min-height: 400px; }
         .deco-gauche { position: absolute; left: 0; top: 20px; width: 250px; opacity: 0.9; z-index: 1; pointer-events: none; }
         .deco-droite-bas { position: absolute; right: 140px; bottom: -50px; width: 350px; z-index: 10; opacity: 0.95; pointer-events: none; filter: drop-shadow(-5px 5px 10px rgba(0,0,0,0.4)); }
-        
         .tab-buttons { position: relative; z-index: 2; margin-bottom: 20px; }
         .tab-btn { padding: 12px 25px; cursor: pointer; margin: 5px; border: none; background: #ddd; font-weight: bold; border-radius: 5px; transition: 0.3s; }
         .active-btn { background-color: #602424 !important; color: white !important; }
@@ -131,21 +129,17 @@
         @media (max-width: 768px) {
             .navbar a { font-size: 0.65rem; padding: 6px 4px; }
             .hero { height: 40vh; }
-            .hero h1 { font-size: 2.1rem !important; } /* Réduit pour éviter le retour à la ligne */
-            .hero-hover-container { height: 70% !important; }
-            
+            .hero h1 { font-size: 2.1rem !important; }
             .presentation-container { flex-direction: column; gap: 20px; }
             .logo-title { height: 100px !important; }
-            .presentation h2 { font-size: 1.7rem !important; } /* Réduit pour les points d'interrogation */
-            
+            .presentation h2 { font-size: 1.7rem !important; }
             .presentation-text { order: 1; }
             .left-pola, .right-pola { 
                 order: 2; transform: rotate(0deg) !important; 
                 width: 160px !important; height: 200px !important; margin: 10px auto;
-                display: block; /* Force l'alignement vertical */
+                display: block; 
             }
-            .left-pola.flipped, .right-pola.flipped { transform: rotateY(180deg) !important; } /* Gère le flip sans rotation */
-
+            .left-pola.flipped, .right-pola.flipped { transform: rotateY(180deg) !important; }
             .poles-container { flex-direction: column; height: auto; }
             .pole-card { width: 100%; height: 150px; flex: none; }
             .pole-card.active { height: 350px; }
@@ -245,7 +239,8 @@
             <div class="pole-info">
                 <h3>Comm'</h3>
                 <div class="members-list">
-                    <p><strong>Membres :</strong> Chloé, Kohai Lana, Mayron, Shannel</p>
+                    <p><strong>Président :</strong> ???</p>
+                    <p><strong>Membres :</strong> Chloé, Kohai Lana, Mayron, Shanel</p>
                 </div>
             </div>
         </div>
@@ -254,6 +249,7 @@
             <div class="pole-info">
                 <h3>Orga</h3>
                 <div class="members-list">
+                    <p><strong>Président :</strong> Evan</p>
                     <p><strong>Membres :</strong> Loren, Jules, Arthur, Evan</p>
                 </div>
             </div>
@@ -263,6 +259,7 @@
             <div class="pole-info">
                 <h3>Event</h3>
                 <div class="members-list">
+                    <p><strong>Président :</strong> Thomas</p>
                     <p><strong>Membres :</strong> Léandry, Liam, Adrian, Thomas </p>
                 </div>
             </div>
